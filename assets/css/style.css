@@ -1,0 +1,233 @@
+/* ------------------------------------------------------------------
+   site-wide settings
+   ------------------------------------------------------------------ */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #222222;
+  --color-muted: #888888;     /* small grey text: notes, footer */
+  --color-accent: #28427C;    /* link color */
+
+  --font-body: -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+
+  --max-width: 800px;         /* width of content column */
+  --photo-width: 180px;
+  --photo-height: 180px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h2 {
+  margin: 48px 0 20px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ---------- photo & bio column ---------- */
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.intro-side {
+  flex: 0 0 var(--photo-width);
+  width: var(--photo-width);
+}
+
+.intro-bio {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.intro-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-bio a.quiet {
+  color: inherit;          
+  text-decoration: none;  
+}
+.intro-bio a.quiet:hover {
+  text-decoration: underline; 
+}
+
+.photo {
+  display: block;
+  width: var(--photo-width);
+  height: var(--photo-height);
+  object-fit: cover;
+}
+
+.emails {
+  margin: 12px 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.social {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;        /* links on one row */
+  word-spacing: -2px;         /* tighten the " · " separators*/
+}
+
+/* ---------- research list ---------- */
+.pub-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub {
+  margin-bottom: 22px;
+}
+
+.pub-title {
+  font-weight: 600;
+}
+
+.me {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pub-authors sup {
+  line-height: 0;
+}
+
+.pub-links a {
+  margin-left: 10px;
+}
+
+.pub-note {
+  margin-left: 10px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.notice {
+  color: var(--color-muted);
+}
+
+/* ---------- Projects ---------- */
+/* Entries reuse .pub-list, .pub, .pub-title and .pub-links from the research
+   list, so spacing, title weight and link buttons stay identical. */
+.project {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.project-body {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.project-thumb {
+  flex: none;
+  width: 120px;
+  aspect-ratio: 4 / 3;
+  margin-top: 4px;
+  object-fit: cover;
+}
+
+/* Title link looks like a plain title until hovered. */
+.project .pub-title a {
+  color: inherit;
+}
+
+.project .pub-title a:hover {
+  color: var(--color-accent);
+}
+
+/* Links start the line here, so the first one needs no left gap. */
+.project-meta .pub-links a:first-child {
+  margin-left: 0;
+}
+
+.project-tags {
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.pub-links + .project-tags {
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .project {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .project-thumb {
+    margin-top: 0;
+  }
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 80px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- small screens: stack the intro ---------- */
+@media (max-width: 600px) {
+  .intro {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .intro-side {
+    flex-basis: auto;
+  }
+}

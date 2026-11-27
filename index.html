@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Yuri Lee</title>
+  <meta name="description" content="Yuri's Personal Website">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+
+  <style>
+    .interests {
+      margin-left: 0px;
+    }
+  </style>
+
 </head>
 <body>
+
+  <header>
+    <h1 style="text-align: left;">Yuri Lee</h1>
+  </header>
+
+  <main>
+    <section class="intro" aria-label="About">
+      <div class="intro-side">
+        <img class="photo" src="assets/img/photo_nov26.jpg" alt="photo" width="180" height="240">
+
+        <p class="emails" style="text-align: left;">
+          yurilee@postech.ac.kr<br>
+        </p>
+
+        <p class="social" style="text-align: left;">
+          <!--<a href="#">X</a> · -->
+          <!--<a href="#">LinkedIn</a> <br> -->
+          <!--<a href="#">Scholar</a> · -->
+          <a href="https://github.com/2u2e">Github</a> <br>
+          <a href="assets/YuriLee_CV.pdf">CV</a>
+          
+        </p>
+      </div>
+
+      <div class="intro-bio">
+        <p>
+          I am a final-year undergraduate at <a href="https://kr.linkedin.com/school/pohang-university-of-science-and-technology/" style="color: #222222;">POSTECH</a>, 
+          working with Prof. <a href="https://minsuk.com/">Minsuk Kahng</a> at <a href="https://prism.snu.ac.kr/">PRISM Lab</a>. 
+          Previously, I was at <a href="https://www.kixlab.org/" style="color: #222222;">KIXLAB</a> with Prof. <a href="https://juhokim.com/" style="color: #222222;">Juho Kim</a>. 
+        </p>
+        <p>
+          I'm drawn to
+          <span class="interests">✶ <strong>alignment</strong> (reward models that measure human gain rather than preference)</span> and
+          <span class="interests">✷ <strong>cognitive-state-aware interaction</strong> (interfaces that infer and adapt to how users think)</span>.
+          Outside HCI and AI, I read behavioral economics and economic sociology.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research</h2>
+
+      <ul id="publications" class="pub-list"></ul>
+
+      <noscript>
+        <p class="notice">Enable JavaScript to see the publication list.</p>
+      </noscript>
+    </section>
+
+    <section id="projects" class="projects" aria-labelledby="projects-heading" hidden>
+      <h2 id="projects-heading">Projects</h2>
+
+      <ul id="project-list" class="pub-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align: right;">Last updated: Nov 2026</p>
+  </footer>
 
 </body>
 </html>
